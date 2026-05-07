@@ -5,10 +5,10 @@ import Entites.*;
 import java.util.Scanner;
 
 public class LibraryMenu {
-    private LibraryService libraryService;
-    private MemberService memberService;
-    private BorrowingService borrowingService;
-    private Scanner scanner;
+    static LibraryService libraryService;
+    static MemberService memberService;
+    static BorrowingService borrowingService;
+    static Scanner scanner;
 
     public LibraryMenu(LibraryService libService, MemberService memService, BorrowingService borrowService) {
         this.libraryService = libService;
@@ -37,15 +37,18 @@ public class LibraryMenu {
             switch (choice) {
                 case 1:
                     addBook();
+                    start();
                     break;
                 case 2:
                     addMagazine();
+                    start();
                     break;
                 case 3:
                     libraryService.listAvailableItems();
                     break;
                 case 4:
                     addMember();
+                    start();
                     break;
                 case 5:
                     memberService.listAllMembers();
